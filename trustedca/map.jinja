@@ -1,0 +1,6 @@
+{% set trustedca = salt['grains.filter_by']({
+    'Debian': {
+        'ca_base_path': '/usr/local/share/ca-certificates'
+    },
+}, merge=pillar.get('trustedca', {})) %}
+
